@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "HelloWorld",
+    "name": "Movies app",
     "slug": "movies-app",
     "platforms": [
       "ios",
