@@ -2,15 +2,13 @@ import React from 'react';
 import styled from 'styled-components/native';
 import Input from '../../components/Search/Input';
 import HorizontalSlider from '../../components/HorizontalSlider';
-import Horizontal from '../../components/Horizontal';
 import Vertical from '../../components/Vertical';
-
-const Container = styled.ScrollView`
-  background-color: black;
-`;
+import ScrollContainer from '../../components/ScrollContainer';
 
 export default ({ movies, shows, keyword, onChange, onSubmit }) => (
-  <Container
+  <ScrollContainer
+    refreshFn={onSubmit}
+    loading={false}
     contentContainerStyle={{
       paddingTop: 10,
     }}
@@ -47,5 +45,5 @@ export default ({ movies, shows, keyword, onChange, onSubmit }) => (
         ))}
       </HorizontalSlider>
     )}
-  </Container>
+  </ScrollContainer>
 );

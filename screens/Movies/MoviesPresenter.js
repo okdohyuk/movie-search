@@ -23,8 +23,8 @@ const UpcomingContainer = styled.View`
   margin-top: 20px;
 `;
 
-export default ({ loading, nowPlaying, populer, upcoming }) => (
-  <ScrollContainer loading={loading}>
+export default ({ refreshFn, loading, nowPlaying, populer, upcoming }) => (
+  <ScrollContainer refreshFn={refreshFn} loading={loading}>
     <>
       <SliderContainer>
         <Swiper controlsEnabled={false} loop timeout={3}>
