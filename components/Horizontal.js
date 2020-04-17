@@ -1,13 +1,15 @@
 import React from 'react';
+import styled from 'styled-components/native';
 import PropTypes from 'prop-types';
 import { TouchableOpacity } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import styled from 'styled-components/native';
 import Poster from './Poster';
+import Votes from './Votes';
+import { apiImage } from '../api';
 import { trimText, formatDate } from '../utils';
+import { useNavigation } from '@react-navigation/native';
 
 const Container = styled.View`
-  padding: 0 30px;
+  padding: 0px 30px;
   margin-bottom: 30px;
   flex-direction: row;
   align-items: flex-start;
@@ -24,7 +26,6 @@ const Title = styled.Text`
   font-weight: bold;
   margin-bottom: 10px;
 `;
-
 const ReleaseDate = styled.Text`
   color: white;
   opacity: 0.8;
@@ -34,15 +35,30 @@ const ReleaseDate = styled.Text`
 const Overview = styled.Text`
   margin-top: 10px;
   color: white;
+  opacity: 0.8;
 `;
 
-const Horizontal = ({ id, title, poster, overview, releaseDate }) => {
+const Horizontal = ({
+  isTV = false,
+  id,
+  title,
+  poster,
+  overview,
+  releaseDate,
+}) => {
   const navigation = useNavigation();
-  const goToDetail = () => {
-    navigation.navigate('Detail', { id, title, poster, overview, releaseDate });
+  const goToDetai = () => {
+    navigation.navigate('Detail', {
+      isTV,
+      id,
+      title,
+      poster,
+      overview,
+      releaseDate,
+    });
   };
   return (
-    <TouchableOpacity onPress={goToDetail}>
+    <TouchableOpacity onPress={goToDetai}>
       <Container>
         <Poster url={poster} />
         <Data>
