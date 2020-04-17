@@ -4,7 +4,7 @@ import * as Font from 'expo-font';
 import { Image, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { Asset } from 'expo-asset';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, FontAwesome } from '@expo/vector-icons';
 import Stack from './navigation/Stack';
 
 const cacheImages = (images) =>
@@ -25,7 +25,7 @@ export default function App() {
       'https://i.kym-cdn.com/photos/images/newsfeed/000/290/992/0aa.jpg',
       require('./assets/splash.png'),
     ]);
-    const fonts = cacheFonts([Ionicons.font]);
+    const fonts = cacheFonts([Ionicons.font, FontAwesome.font]);
     return Promise.all([...images, ...fonts]);
   };
   const onFinish = () => setIsReady(true);
