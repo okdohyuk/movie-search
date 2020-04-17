@@ -21,7 +21,7 @@ const Title = styled.Text`
 const Vertical = ({ id, poster, title, votes }) => {
   const navigation = useNavigation();
   const goToDetail = () => {
-    navigation.navigate('Detail', { id, title, votes });
+    navigation.navigate('Detail', { id, poster, title, votes });
   };
   return (
     <TouchableOpacity onPress={goToDetail}>
