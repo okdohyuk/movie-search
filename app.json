@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Movies app",
-    "slug": "movies-app",
+    "name": "무써",
+    "slug": "movie-search",
     "platforms": [
       "ios",
       "android",
@@ -10,10 +10,11 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "backgroundColor": "#000000",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -22,7 +23,21 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": true,
+      "bundleIdentifier": "co.okdohyuk.MovieSearch",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "co.okdohyuk.MovieSearch",
+      "versionCode": 1
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#000000"
+    },
+    "androidNavigationBar": {
+      "backgroundColor": "#000000"
+    },
+    "description": "영화를 찾다 무써",
+    "githubUrl": "https://github.com/okdohyuk/movies-app"
   }
 }
